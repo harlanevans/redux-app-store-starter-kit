@@ -1,6 +1,15 @@
 import React from 'react';
+import { connect, } from 'react-redux';
+import { Link, } from 'react-router-dom';
+import { getApps, } from '../reducers/apps';
+import { Container, Header, Card, Image, } from 'semantic-ui-react';
+
 
 class Apps extends React.Component {
+
+  componentDidMount() {
+    this.props.dispatch(getApps());
+  }
 
   render() {
     return (
@@ -11,4 +20,4 @@ class Apps extends React.Component {
   }
 }
 
-export default Apps;
+export default connect()(Apps);
