@@ -3,6 +3,8 @@ import Home from './components/Home';
 import NoMatch from './components/NoMatch';
 import Navbar from './components/Navbar';
 import Apps from './components/Apps';
+import FetchApps from './components/FetchApps';
+import AppView from './components/AppView';
 import { Container, } from "semantic-ui-react";
 import { Route, Switch, } from "react-router-dom";
 
@@ -12,7 +14,7 @@ const App = () => (
     <Container>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/apps" component={Apps} />
+        <Route path='/apps' component={FetchApps} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
